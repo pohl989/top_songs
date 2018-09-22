@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button } from 'semantic-ui-react'
-
+import { Button, Icon, Grid } from 'semantic-ui-react'
+import Header from './components/Header'
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-          <Button color='orange' size='huge'>Click Here</Button>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Grid divided='vertically'>
+      <Grid.Row columns={6}>
+        <Grid.Column>
+        <Button color='purple' size='mini' fluid >Click Click</Button>
+        </Grid.Column>
+        <Grid.Column>
+        <Button color='blue' size='mini' fluid >Click Click</Button>
+        </Grid.Column>
+      </Grid.Row>
+  
+      <Grid.Row columns={3}>
+        <Grid.Column>
+        <Button color='green' size='mini' fluid >Click Click</Button>
+        </Grid.Column>
+        <Grid.Column>
+        <Button color='pink' size='mini' fluid >Click Click</Button>
+        </Grid.Column>
+        <Grid.Column>
+        <Button color='red' size='mini' fluid >Click Click</Button>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+    
+
     );
   }
 }
