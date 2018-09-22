@@ -22,6 +22,9 @@ class SongForm extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
+        <input 
+          placeholder="Don't forget the artist"
+        />
       </form>
     )
   }
