@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
 
-class Header extends React.Compent {
+class Header extends Component {
 
   state = { activeItem: 'home' }
 
