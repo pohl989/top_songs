@@ -25,7 +25,7 @@ class SongForm extends Component {
 
   render() {
     return (
-      <div className="fancy-form">
+      <div id="fancy-form">
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
             <label>Song Title</label>
@@ -33,7 +33,7 @@ class SongForm extends Component {
               placeholder='Song Title' 
               required
               autoFocus
-              value={this.state.name}
+              value={this.state.title}
               onChange={this.handleTitleChange}
             />
           </Form.Field>
@@ -42,7 +42,7 @@ class SongForm extends Component {
             <input 
               required
               placeholder='Artist' 
-              value={this.state.name}
+              value={this.state.artist}
               onChange={this.handleArtistChange}
             />
           </Form.Field>

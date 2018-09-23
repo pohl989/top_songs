@@ -7,7 +7,7 @@ const Song = ({ title, id, artist, position_number, updateSong, deleteSong }) =>
 
     <List.Item>
       <List.Content floated='right'>
-         <Button id={id} circular color='red' onClick={deleteSong}>X</ Button>
+         <Button id={id} circular color='red' onClick={() => deleteSong(id)}>X</ Button>
       </List.Content>
       <List.Icon name='music' size='large' verticalAlign='middle' />
       <List.Content>

@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin 9s 3s ease-in-out;
+  animation: App-logo-spin 2 infinite ease-in-out;
   height: 80px;
 }
 
@@ -31,7 +31,7 @@
   margin: 30px;
 }
 
-.fancy-form {
+#fancy-form {
   padding: 30px;
   background-color: #ccc;
   margin: 0px 20px;

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Pohl989Logo from './Pohl989Logo-1.png';
 import SongForm from './components/SongForm';
 import './App.css';
-import { Header, Grid, Container } from 'semantic-ui-react';
+import { Header, Grid, Container, Image } from 'semantic-ui-react';
 import SongList from './components/SongList';
 
 
 class App extends Component {
 
   state = { songs: [
-    {id: 1, title: "The best Song Ever", artist: "Shania Twain", position_number: 3}, 
-    {id: 2, title: "Tasty Treats", artist: "The White Stripes", position_number: 2}, 
+    {id: 1, title: "The best Song Ever", artist: "Cool Artist", position_number: 3}, 
+    {id: 2, title: "Another Great Song", artist: "Sum42", position_number: 2}, 
     {id: 3, title: "Lemon Ginger", artist: "Mamachari", position_number: 1},
   ]}
 
@@ -38,8 +38,7 @@ class App extends Component {
     })
   }
 
-  deleteSong = (e) => {
-    let id = e.target.id
+  deleteSong = (id) => {
     fetch(`/api/songs/${id}`, { method: 'DELETE' })
       .then( () => {
         const { songs } = this.state;
@@ -59,6 +58,7 @@ class App extends Component {
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
             <Container className="cool-title">
+              <img src={Pohl989Logo} className="App-logo" alt="logo" />
               <Header as='h1'>Best Songs Ever</Header>
             </Container>
           </Grid.Row>
