@@ -21,6 +21,7 @@ class SongForm extends Component {
     this.props.addSong(this.state.title, this.state.artist);
     this.setState({ title: '' })
     this.setState({ artist: '' })
+    document.getElementById("bestInputEver").focus();
   }
 
   render() {
@@ -30,6 +31,7 @@ class SongForm extends Component {
           <Form.Field>
             <label>Song Title</label>
             <input 
+              id="bestInputEver"
               placeholder='Song Title' 
               required
               autoFocus

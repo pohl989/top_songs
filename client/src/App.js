@@ -9,9 +9,9 @@ import SongList from './components/SongList';
 class App extends Component {
 
   state = { songs: [
-    {id: 1, title: "The best Song Ever", artist: "Cool Artist", position_number: 3}, 
-    {id: 2, title: "Another Great Song", artist: "Sum42", position_number: 2}, 
-    {id: 3, title: "Lemon Ginger", artist: "Mamachari", position_number: 1},
+    {id: 1, title: "The best Song Ever", artist: "Cool Artist", position_number: 3, isEditing: false}, 
+    {id: 2, title: "Another Great Song", artist: "Sum42", position_number: 2, isEditing: false}, 
+    {id: 3, title: "Lemon Ginger", artist: "Mamachari", position_number: 1, isEditing: false},
   ]}
 
   componentDidMount() {
