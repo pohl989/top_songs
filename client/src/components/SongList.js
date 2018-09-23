@@ -7,7 +7,7 @@ import { List, Container } from 'semantic-ui-react';
 const SongList = ({songs, updateSong, deleteSong}) => (
   <div className="row">
   <Container>
-    <List divided relaxed>
+    <List celled>
 
     { songs.map( single => 
       <Song

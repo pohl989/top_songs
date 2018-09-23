@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import SongForm from './components/SongForm';
 import './App.css';
-import { Button, Icon, Grid } from 'semantic-ui-react';
+import { Header, Grid, Container } from 'semantic-ui-react';
 import SongList from './components/SongList';
 
 
@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   deleteSong = (name) => {
+    console.log('delete delete')
     //TODO make api call to delete todo
     //TODO remove it from state
   }
@@ -42,28 +43,27 @@ class App extends Component {
     return (
       <div>
         <Grid divided='vertically'>
-        <Grid.Row columns={6}>
-          <Grid.Column>
-            < SongForm 
-              addSong={this.addSong}
-            />
-          </Grid.Column>
-          <Grid.Column>
-            <Button color='blue' size='mini' fluid >Click Click</Button>
-          </Grid.Column>
-        </Grid.Row>
-    
-        <Grid.Row columns={1}>
-          <Grid.Column>
-            <SongList 
-              songs={this.state.songs}
-              updateSong={this.updateSong} 
-              deleteSong={this.deleteSong}
-            />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </div>
+          <Grid.Row columns={2}>
+            <Container className="cool-title">
+              <Header as='h1'>Best Songs Ever</Header>
+            </Container>
+          </Grid.Row>
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              < SongForm 
+                addSong={this.addSong}
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <SongList 
+                songs={this.state.songs}
+                updateSong={this.updateSong} 
+                deleteSong={this.deleteSong}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
     
 
     );
