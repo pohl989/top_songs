@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
 
   #this needs to be the very last thing before the end
-  get '*other', to: 'static#index'
+  # get '*other', to: 'static#index'
 
 end

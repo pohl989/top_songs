@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin 9s 3s ease-in-out;
   height: 80px;
 }
 
@@ -29,4 +29,10 @@
 
 .cool-title {
   margin: 30px;
+}
+
+.fancy-form {
+  padding: 30px;
+  background-color: #ccc;
+  margin: 0px 20px;
 }

@@ -10,26 +10,30 @@ class App extends Component {
 
   state = { songs: [
     {id: 1, title: "The best Song Ever", artist: "Shania Twain", position_number: 3}, 
-    {id: 2, title: "Tasty Treats", artist: "The White Strips", position_number: 2}, 
+    {id: 2, title: "Tasty Treats", artist: "The White Stripes", position_number: 2}, 
     {id: 3, title: "Lemon Ginger", artist: "Mamachari", position_number: 1},
   ]}
 
   componentDidMount() {
-    //TODO make a call to our rails server to get Items
+    fetch('/api/songs')
+      .then( res => res.json() )
+      .then( songs => this.setState({ songs }) )
+  }
 
-  } 
   
   
-  addSong = (name) => {
+  addSong = (title, artist) => {
     //TODO make api call to rails server to add item
     const { songs } = this.state;
     //Generate random id
     const id = Math.floor(( 1 + Math.random()) * 0x1000).toString()
-    this.setState({ songs: [...songs, { id, name }] });
+    this.setState({ songs: [...songs, { id, title, artist }] });
   }
 
   deleteSong = (name) => {
     console.log('delete delete')
+    const { songs } = this.state;
+    // this.setState({ songs: songs.filter( t => t.id !== id ) })
     //TODO make api call to delete todo
     //TODO remove it from state
   }
