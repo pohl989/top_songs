@@ -23,20 +23,30 @@ class App extends Component {
   
   
   addSong = (title, artist) => {
-    //TODO make api call to rails server to add item
-    const { songs } = this.state;
-    //Generate random id
-    const id = Math.floor(( 1 + Math.random()) * 0x1000).toString()
-    this.setState({ songs: [...songs, { id, title, artist }] });
+    let song = { title, artist };
+    fetch('/api/songs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(song)
+    }).then( res => res.json() )
+      .then( song => {
+        const { songs } = this.state;
+        this.setState({ songs: [...songs, song] });
+    })
   }
 
-  deleteSong = (name) => {
-    console.log('delete delete')
-    const { songs } = this.state;
-    // this.setState({ songs: songs.filter( t => t.id !== id ) })
-    //TODO make api call to delete todo
-    //TODO remove it from state
-  }
+  deleteSong = (e) => {
+    let id = e.target.id
+    fetch(`/api/songs/${id}`, { method: 'DELETE' })
+      .then( () => {
+        const { songs } = this.state;
+        this.setState({ songs: songs.filter( t => t.id !== id ) })
+      })
+    this.componentDidMount()
+   }
 
   updateSong = (song) => {
     //TODO make api call to update todo

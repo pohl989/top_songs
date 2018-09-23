@@ -3,11 +3,11 @@ import { List, Button } from 'semantic-ui-react';
 
 
 
-const Song = ({ title, artist, position_number, updateSong, deleteSong }) => (
+const Song = ({ title, id, artist, position_number, updateSong, deleteSong }) => (
 
     <List.Item>
       <List.Content floated='right'>
-         <Button circular color='red' icon='delete' onClick={deleteSong} />
+         <Button id={id} circular color='red' onClick={deleteSong}>X</ Button>
       </List.Content>
       <List.Icon name='music' size='large' verticalAlign='middle' />
       <List.Content>
