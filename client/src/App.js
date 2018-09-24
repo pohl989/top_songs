@@ -47,9 +47,17 @@ class App extends Component {
     this.componentDidMount()
    }
 
-  updateSong = (song) => {
-    //TODO make api call to update todo
-    //TODO update state
+   updateSong = (id) => {
+    fetch(`/api/songs/${id}`, { method: 'PUT' })
+      .then( res => res.json() )
+      .then( item => {
+        let songs = this.state.songs.map( t => {
+          if (t.id === id)
+            return item
+          return t;
+      });
+      this.setState({ songs });
+    })
   }
 
   render() {

@@ -4,8 +4,9 @@ import { List, Container } from 'semantic-ui-react';
 
 
 class SongList extends React.Component {
+
   render() {
-     const {deleteSong, updateSong, songs} = this.props;
+    const {deleteSong, updateSong, songs} = this.props;
 
     return (
       <div className="row">
